@@ -44,19 +44,43 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Simple form handling (contact page)
+// Contact form handling with Formspree
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('.btn-primary');
     const originalText = btn.textContent;
-    btn.textContent = 'Message Sent!';
-    btn.style.background = '#34d399';
-    setTimeout(() => {
-      btn.textContent = originalText;
-      btn.style.background = '';
-      contactForm.reset();
-    }, 3000);
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        btn.textContent = 'Message Sent!';
+        btn.style.background = '#34d399';
+        contactForm.reset();
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 3000);
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      btn.textContent = 'Failed to send. Try again.';
+      btn.style.background = '#f87171';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+    }
   });
 }
