@@ -49,38 +49,71 @@ const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+    
     const btn = contactForm.querySelector('.btn-primary');
+    const statusDiv = document.getElementById('form-status');
     const originalText = btn.textContent;
+    
+    // Set _replyto to the email value
+    const emailInput = document.getElementById('email');
+    const replyToInput = document.getElementById('_replyto');
+    if (emailInput && replyToInput) {
+      replyToInput.value = emailInput.value;
+    }
+    
     btn.textContent = 'Sending...';
     btn.disabled = true;
+    statusDiv.style.display = 'none';
 
     try {
+      const formData = new FormData(contactForm);
+      
       const response = await fetch(contactForm.action, {
         method: 'POST',
-        body: new FormData(contactForm),
-        headers: { 'Accept': 'application/json' }
+        body: formData,
+        headers: { 
+          'Accept': 'application/json'
+        }
       });
 
       if (response.ok) {
+        statusDiv.textContent = '✓ Message sent successfully! We\'ll get back to you soon.';
+        statusDiv.style.background = '#d1fae5';
+        statusDiv.style.color = '#065f46';
+        statusDiv.style.border = '1px solid #34d399';
+        statusDiv.style.display = 'block';
+        
         btn.textContent = 'Message Sent!';
         btn.style.background = '#34d399';
         contactForm.reset();
+        
         setTimeout(() => {
           btn.textContent = originalText;
           btn.style.background = '';
           btn.disabled = false;
-        }, 3000);
+          statusDiv.style.display = 'none';
+        }, 5000);
       } else {
-        throw new Error('Server error');
+        const data = await response.json();
+        throw new Error(data.error || 'Server error');
       }
     } catch (err) {
-      btn.textContent = 'Failed to send. Try again.';
+      statusDiv.textContent = '✗ Failed to send message. Please try again or email us directly.';
+      statusDiv.style.background = '#fee2e2';
+      statusDiv.style.color = '#991b1b';
+      statusDiv.style.border = '1px solid #f87171';
+      statusDiv.style.display = 'block';
+      
+      btn.textContent = 'Try Again';
       btn.style.background = '#f87171';
+      
       setTimeout(() => {
         btn.textContent = originalText;
         btn.style.background = '';
         btn.disabled = false;
       }, 3000);
+      
+      console.error('Form submission error:', err);
     }
   });
 }
