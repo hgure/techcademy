@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 48" fill="none">
+  <!-- Rounded square with "T" monogram -->
+  <rect x="2" y="4" width="40" height="40" rx="12" fill="#38bdf8"/>
+  <!-- Bold T letterform -->
+  <rect x="10" y="12" width="24" height="5" rx="2" fill="#0f172a"/>
+  <rect x="18" y="12" width="8" height="24" rx="2" fill="#0f172a"/>
+  <!-- Subtle upward arrow integrated into T -->
+  <path d="M22 14l-4 5h3v6h2v-6h3z" fill="#38bdf8"/>
+  <!-- Clean wordmark -->
+  <text x="52" y="22" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#64748b" letter-spacing="4">TECH</text>
+  <text x="52" y="38" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="800" fill="#f8fafc" letter-spacing="1">cademy</text>
+</svg>

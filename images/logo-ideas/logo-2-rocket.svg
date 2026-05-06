@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 48" fill="none">
+  <!-- Circular badge -->
+  <circle cx="22" cy="24" r="20" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+  <!-- Rocket -->
+  <path d="M22 12c-2 4-3 8-3 12s1 5 3 7c2-2 3-3 3-7s-1-8-3-12z" fill="#38bdf8"/>
+  <path d="M17 28c-2 1-3 3-3 5l5-2" fill="#f97316"/>
+  <path d="M27 28c2 1 3 3 3 5l-5-2" fill="#f97316"/>
+  <circle cx="22" cy="22" r="2" fill="#0f172a"/>
+  <!-- Wordmark with accent color on 'cademy' -->
+  <text x="48" y="30" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#f8fafc" letter-spacing="-0.3">tech</text>
+  <text x="100" y="30" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#38bdf8" letter-spacing="-0.3">cademy</text>
+</svg>
