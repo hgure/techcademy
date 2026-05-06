@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <rect width="80" height="80" rx="16" fill="#1e3a5f"/>
+  <!-- Helm wheel shape -->
+  <circle cx="40" cy="40" r="14" stroke="#38bdf8" stroke-width="2" opacity="0.6"/>
+  <circle cx="40" cy="40" r="5" fill="#38bdf8" opacity="0.4"/>
+  <!-- Spokes -->
+  <line x1="40" y1="26" x2="40" y2="21" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <line x1="40" y1="54" x2="40" y2="59" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="40" x2="21" y2="40" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <line x1="54" y1="40" x2="59" y2="40" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <line x1="30" y1="30" x2="26.5" y2="26.5" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <line x1="50" y1="50" x2="53.5" y2="53.5" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <line x1="50" y1="30" x2="53.5" y2="26.5" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <line x1="30" y1="50" x2="26.5" y2="53.5" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <!-- Endpoint dots -->
+  <circle cx="40" cy="21" r="2" fill="#38bdf8"/>
+  <circle cx="40" cy="59" r="2" fill="#38bdf8"/>
+  <circle cx="21" cy="40" r="2" fill="#38bdf8"/>
+  <circle cx="59" cy="40" r="2" fill="#38bdf8"/>
+  <circle cx="26.5" cy="26.5" r="2" fill="#38bdf8"/>
+  <circle cx="53.5" cy="53.5" r="2" fill="#38bdf8"/>
+  <circle cx="53.5" cy="26.5" r="2" fill="#38bdf8"/>
+  <circle cx="26.5" cy="53.5" r="2" fill="#38bdf8"/>
+</svg>
